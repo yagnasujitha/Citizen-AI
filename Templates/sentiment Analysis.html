@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Test Sentiment Analysis</h2>
+<form id="sentimentForm">
+    <textarea name="text" id="text" rows="4" placeholder="Type something to analyze sentiment..." style="width:100%;" required></textarea>
+    <br><br>
+    <button type="submit" style="padding:10px 20px;">Analyze</button>
+</form>
+
+<div id="result" style="margin-top:20px;"></div>
+
+<script>
+    document.getElementById("sentimentForm").addEventListener("submit", function(e) {
+        e.preventDefault();
+        const formData = new FormData();
+        formData.append("text", document.getElementById("text").value);
+
+        fetch("/sentiment", {
+            method: "POST",
+            body: formData
+        })
+        .then(res => res.json())
+        .then(data => {
+            if (data.error) {
+                document.getElementById("result").innerHTML = `<span style="color:red;">Error: ${data.error}</span>`;
+            } else {
+                document.getElementById("result").innerHTML = `
+                    <p><strong>Text:</strong> ${data.text}</p>
+                    <p><strong>Sentiment:</strong> ${data.sentiment}</p>
+                `;
+            }
+        });
+    });
+</script>
+{% endblock %}

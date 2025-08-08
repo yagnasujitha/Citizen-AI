@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Citizen Feedback Analytics Dashboard</h2>
+<p>Visualizing public sentiment and engagement in real time.</p>
+
+<canvas id="sentimentChart" width="400" height="200"></canvas>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    async function loadSentimentData() {
+        // Placeholder data for now – you can replace with an API call to your backend
+        return {
+            labels: ["Positive", "Neutral", "Negative"],
+            counts: [12, 5, 8] // Example counts
+        };
+    }
+
+    async function renderChart() {
+        const data = await loadSentimentData();
+
+        const ctx = document.getElementById('sentimentChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: data.labels,
+                datasets: [{
+                    label: 'Sentiment Distribution',
+                    data: data.counts,
+                    backgroundColor: ['#28a745', '#ffc107', '#dc3545']
+                }]
+            },
+            options: {
+                responsive: true
+            }
+        });
+    }
+
+    renderChart();
+</script>
+{% endblock %}

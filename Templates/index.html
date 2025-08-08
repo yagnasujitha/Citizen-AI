@@ -1,0 +1,34 @@
+<!-- templates/index.html -->
+{% extends "base.html" %}
+{% block title %}Citizen AI - Home{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="text-center">
+        <h1 class="display-4">Welcome to Citizen AI</h1>
+        <p class="lead">An Intelligent Citizen Engagement Platform for AI-driven government-citizen interaction.</p>
+        <hr class="my-4">
+        <p>
+            Leveraging IBM Granite models, Watson services, and advanced NLP to improve governance, transparency, and public trust.
+        </p>
+        <a class="btn btn-primary btn-lg m-2" href="{{ url_for('chat') }}">Ask a Question</a>
+        <a class="btn btn-success btn-lg m-2" href="{{ url_for('sentiment_test') }}">Test Sentiment</a>
+        <a class="btn btn-info btn-lg m-2" href="{{ url_for('dashboard') }}">View Dashboard</a>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-md-4">
+            <h3>Real-time AI Responses</h3>
+            <p>Get instant answers about government services, policies, and civic issues using AI-powered chat.</p>
+        </div>
+        <div class="col-md-4">
+            <h3>Sentiment Analysis</h3>
+            <p>Analyze citizen feedback and detect emerging public concerns with powerful NLP techniques.</p>
+        </div>
+        <div class="col-md-4">
+            <h3>Data-Driven Governance</h3>
+            <p>Use actionable insights to improve service delivery, efficiency, and transparency in governance.</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

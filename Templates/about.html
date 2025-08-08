@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>About • Citizen AI</title>
+    <!-- Bootstrap 5 CDN (optional) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+      :root{--accent:#0d6efd}
+      body{font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; background:#f8f9fa}
+      .hero{background:linear-gradient(180deg, rgba(13,110,253,0.06), transparent 60%); padding:4rem 0}
+      .feature-icon{width:56px;height:56px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:#fff;box-shadow:0 6px 18px rgba(13,110,253,0.06)}
+      .card-glow{box-shadow:0 10px 30px rgba(13,110,253,0.06)}
+      footer{font-size:.9rem}
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="{{ url_for('index') }}">Citizen AI</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="nav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ url_for('dashboard') }}">Dashboard</a></li>
+            <li class="nav-item"><a class="nav-link active" href="{{ url_for('about') }}">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ url_for('contact') }}">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-7">
+            <h1 class="display-6 fw-bold">About Citizen AI</h1>
+            <p class="lead text-muted">Citizen AI is an intelligent citizen engagement platform designed to revolutionize how governments interact with the public — combining conversational AI, sentiment analysis, and an analytics dashboard to turn feedback into action.</p>
+            <p>Built with Flask, IBM Granite models, and IBM Watson services, Citizen AI automates routine interactions, surfaces emerging issues, and helps public agencies respond faster and more transparently.</p>
+            <a href="{{ url_for('contact') }}" class="btn btn-primary mt-3">Get in touch</a>
+          </div>
+          <div class="col-lg-5 d-none d-lg-block">
+            <div class="card p-3 card-glow">
+              <div class="card-body">
+                <h6 class="text-muted">Quick highlights</h6>
+                <ul class="list-unstyled mb-0">
+                  <li>• Real-time, AI-driven citizen responses</li>
+                  <li>• NLP-based intent recognition</li>
+                  <li>• Sentiment & trend analysis</li>
+                  <li>• Dynamic analytics dashboard</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="py-5">
+      <div class="container">
+        <section class="mb-5">
+          <div class="row g-4">
+            <div class="col-md-4">
+              <div class="p-4 bg-white rounded-3">
+                <div class="d-flex align-items-start gap-3">
+                  <div class="feature-icon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 2v20" stroke="#0d6efd" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M5 7h14" stroke="#0d6efd" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <h5 class="mb-1">Core Capabilities</h5>
+                    <p class="text-muted mb-0">Conversational AI, intent classification, automated replies, and multi-channel intake (web, mobile, social).</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="p-4 bg-white rounded-3">
+                <div class="d-flex align-items-start gap-3">
+                  <div class="feature-icon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M3 12h18" stroke="#0d6efd" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M12 3v18" stroke="#0d6efd" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <h5 class="mb-1">Analytics & Insights</h5>
+                    <p class="text-muted mb-0">Real-time dashboards visualize sentiment, trending topics, and service KPIs so policymakers can act on citizen feedback.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="p-4 bg-white rounded-3">
+                <div class="d-flex align-items-start gap-3">
+                  <div class="feature-icon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z" stroke="#0d6efd" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <h5 class="mb-1">Security & Compliance</h5>
+                    <p class="text-muted mb-0">Designed for government deployments with role-based access, logging, and secure integrations with existing government systems.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <section class="mb-5">
+          <div class="row">
+            <div class="col-lg-7">
+              <h3>How it works</h3>
+              <p class="text-muted">Citizen AI receives citizen queries (from web forms, chat widgets, or social channels), extracts intent and entities using IBM Granite models, enriches results with IBM Watson services (like Discovery or Natural Language Understanding), and responds with templated or generated replies. Feedback is routed to the analytics dashboard and case management workflows as needed.</p>
+
+              <ul>
+                <li>1. Intake: Multi-channel collection (web, mobile, social).</li>
+                <li>2. Understanding: Intent & entity extraction via Granite models.</li>
+                <li>3. Analysis: Sentiment scoring and trend detection.</li>
+                <li>4. Response & Escalation: Auto-replies, case creation, or handoff to human agents.</li>
+              </ul>
+            </div>
+            <div class="col-lg-5">
+              <div class="card p-3">
+                <div class="card-body">
+                  <h6 class="text-muted">Tech stack</h6>
+                  <p class="mb-1"><strong>Backend:</strong> Flask (Python)</p>
+                  <p class="mb-1"><strong>AI:</strong> IBM Granite models, IBM Watson NLU/Discovery</p>
+                  <p class="mb-1"><strong>Frontend:</strong> Bootstrap + vanilla JS (or React/Gradio for demos)</p>
+                  <p class="mb-1"><strong>Data:</strong> PostgreSQL / Elasticsearch / Timeseries DB (optional)</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="mb-5">
+          <h3>Use cases</h3>
+          <div class="row g-3">
+            <div class="col-md-6">
+              <div class="p-3 bg-white rounded-3">
+                <h6>Citizen support automation</h6>
+                <p class="text-muted mb-0">Automate common queries about documentation, payments, and appointment scheduling to reduce response times and staff load.</p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="p-3 bg-white rounded-3">
+                <h6>Policy feedback & public consultation</h6>
+                <p class="text-muted mb-0">Collect and analyze public sentiment during consultations to inform policy drafting and stakeholder outreach.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="mb-5">
+          <h3>Team & Contact</h3>
+          <p class="text-muted">Citizen AI is developed by the project team as part of the SmartInternz / internship initiative. For demos, integrations, or partnership inquiries, reach out via the Contact page.</p>
+          <a href="{{ url_for('index') }}" class="btn btn-outline-secondary">Back to Home</a>
+        </section>
+
+      </div>
+    </main>
+
+    <footer class="py-4 bg-white border-top">
+      <div class="container d-flex justify-content-between align-items-center">
+        <div>
+          <small class="text-muted">© <span id="year"></span> Citizen AI — Intelligent Citizen Engagement Platform</small>
+        </div>
+        <div>
+          <small class="text-muted">Built with Flask • IBM Granite • IBM Watson</small>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
